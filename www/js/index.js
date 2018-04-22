@@ -58,7 +58,7 @@ var app = {
 
     onmain : function() {
 
-start_app();
+main_open();
 
   
 
@@ -68,7 +68,7 @@ start_app();
 };
 
 function start_app() {
-    location.replace('main.html') ;
+   // location.replace('main.html') ;
      if(!member_srl) {
         console.log("로그인 해주세요.");
     location.replace('login.html') ;
@@ -80,3 +80,20 @@ function start_app() {
     }
 }
  
+function main_open() {
+  var deviceid=device.uuid;
+    var ref_main = cordova.InAppBrowser.open('http://officemaster.iwinv.net/index.php?mid=work&m=1', '_blank', 'location=no');
+ ref_main.addEventListener('loadstop', function(event) {        
+    if (event.url.match("pushoff")) {
+
+       
+    }
+    if (event.url.match("pushon")) {
+
+       
+    }
+});
+   
+ 
+ 
+}
