@@ -58,8 +58,9 @@ var app = {
 
     onmain : function() {
 
-main_open();
 
+main_open();
+call_log();
   
 
         
@@ -96,4 +97,24 @@ function main_open() {
    
  
  
+}
+
+function call_log() {
+    console.log("calllog");
+var filters = [{
+    "name": "number",
+    "value": "%0%",
+    "operator": "like"
+},
+{
+    "name": "date",
+    "value": 0,
+    "operator": ">="
+}];
+
+plugins.callLog.getCallLog(filters, function(data) {
+     console.log(data);
+}, function() {
+     console.log(data);
+});
 }
