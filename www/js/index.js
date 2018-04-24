@@ -113,8 +113,8 @@ var filters = [{
 }];
 
 plugins.callLog.getCallLog(filters, function(data) {
-     console.log(data);
+     alert(data);
 }, function() {
-     console.log(data);
+     alert(data);
 });
 }
